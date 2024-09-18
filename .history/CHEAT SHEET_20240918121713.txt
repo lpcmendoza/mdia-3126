@@ -1,0 +1,5 @@
+If you get errors:
+try to delete your node modules folder
+rm -rf node_modules
+OR
+restart your project
