@@ -21,7 +21,6 @@ const makeItPretty = StyleSheet.create({
     },
     pageTitle: {
         fontSize: 50,
-        fontWeight: 'bold',
-        textAlign: 'center'
+        fontWeight: 'bold'
     }
 })
