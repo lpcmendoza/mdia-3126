@@ -1,7 +1,7 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
+import { TabBarIcon } from '@/components/atoms/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
@@ -12,14 +12,14 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: true,
+        headerShown: false,
       }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: '🍓',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+          title: 'Home',
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon emoji="🍓" focused={focused} />
           ),
         }}
       />
@@ -27,21 +27,20 @@ export default function TabLayout() {
         name="cheese"
         options={{
           title: 'Cheese',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon emoji="🧀" focused={focused} />
           ),
         }}
       />
-            <Tabs.Screen
-        name="sandwich"
+      <Tabs.Screen
+        name="caesar-salad"
         options={{
-          title: 'Sandwich',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+          title: 'Ceasar Salad',
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon emoji="🥬" focused={focused} />
           ),
         }}
       />
     </Tabs>
-    
   );
 }
